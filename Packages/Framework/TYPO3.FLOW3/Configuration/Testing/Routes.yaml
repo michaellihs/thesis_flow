@@ -1,0 +1,16 @@
+#                                                                        #
+# Routes leading to controllers used in functional tests                 #
+#                                                                        #
+
+##
+# Routes for the Http functional tests
+
+-
+  name: 'FLOW3 :: Functional Test: HTTP - FooController'
+  uriPattern: 'typo3/flow3/test/http/foo'
+  defaults:
+    '@package':    'TYPO3.FLOW3'
+    '@subpackage': 'Tests\Functional\Http\Fixtures'
+    '@controller': 'Foo'
+    '@action':     'index'
+    '@format':     'html'

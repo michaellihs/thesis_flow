@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This script belongs to the FLOW3 build system.                         *
+ *                                                                        *
+ * It is free software; you can redistribute it and/or modify it under    *
+ * the terms of the GNU Lesser General Public License as published by the *
+ * Free Software Foundation, either version 3 of the License, or (at your *
+ * option) any later version.                                             *
+ *                                                                        *
+ * This script is distributed in the hope that it will be useful, but     *
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
+ * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser       *
+ * General Public License for more details.                               *
+ *                                                                        *
+ * You should have received a copy of the GNU Lesser General Public       *
+ * License along with the script.                                         *
+ * If not, see http://www.gnu.org/licenses/lgpl.html                      *
+ *                                                                        *
+ * The TYPO3 project - inspiring people to share!                         *
+-->
+<project name="Tests">
+
+	<target name="lint" depends="lint-php, lint-js" description="Run lint on source files" />
+	<target name="test" depends="test-js" description="Run tests"/>
+
+
+	<target name="lint-php" unless="skipLint">
+		<mkdir dir="${project.reportsDirectory}"/>
+		<phplint haltonfailure="true" level="debug" tofile="${project.reportsDirectory}/LintPhp.txt">
+			<fileset refid="files-php"/>
+		</phplint>
+	</target>
+
+	<target name="lint-js" unless="skipLint">
+		<mkdir dir="${project.reportsDirectory}"/>
+		<jsllint haltonfailure="true" showwarnings="false">
+			<fileset refid="files-js"/>
+		</jsllint>
+	</target>
+
+	<target name="test-js" description="Run Jasmine JavaScript tests">
+		<mkdir dir="${project.reportsDirectory}JavaScriptTests" />
+		<foreach param="testRunnerFileName" target="test-js.singletestrunner">
+			<fileset refid="files-functionaljavascripttests"/>
+		</foreach>
+	</target>
+	<target name="test-js.singletestrunner">
+		<exec dir="${project.commonBuildDirectory}JSUnit/Jasmine/test" command="./envjs.runner.sh ${project.basedir}/${testRunnerFileName}" passthru="true" />
+	</target>
+</project>

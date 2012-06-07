@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package xmlns="http://typo3.org/ns/2008/flow3/package">
+	<key>Doctrine.DBAL</key>
+	<title>Doctrine DBAL</title>
+	<description/>
+	<version>2.2.2</version>
+	<categories/>
+	<constraints>
+		<depends>
+			<package>Doctrine.Common</package>
+		</depends>
+	</constraints>
+</package>
