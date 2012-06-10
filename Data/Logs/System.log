@@ -1,0 +1,8 @@
+12-06-11 00:03:14  NOTICE    FLOW3                Locking site. Lock file: /var/www/kunden/thesis/Data/Temporary/Production/FLOW3.lock
+12-06-11 00:04:15  INFO      FLOW3                Reflected 576 emerged classes.
+12-06-11 00:04:21  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 12 changed files and 2 changed directories.
+12-06-11 00:04:21  INFO      FLOW3                The configuration has changed, triggering an AOP proxy class rebuild.
+12-06-11 00:04:21  INFO      FLOW3                File Monitor "FLOW3_ConfigurationFiles" detected 6 changed files and 2 changed directories.
+12-06-11 00:04:21  INFO      FLOW3                Aspects have been modified, therefore rebuilding all target classes.
+12-06-11 00:04:57  INFO      FLOW3                Built and froze reflection runtime caches (601 classes).
+12-06-11 00:04:57  NOTICE    FLOW3                Unlocked site.

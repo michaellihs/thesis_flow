@@ -1423,3 +1423,195 @@
 12-06-07 08:54:07  DEBUG     FLOW3                Router route(): Route "Welcome :: Welcome screen" matched the path "flow3/welcome".
 12-06-07 08:54:30  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "Thesis/".
 12-06-07 08:55:35  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:04:47  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:07:43  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 10:07:44  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:08:15  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:08:15  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 10:08:15  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:08:15  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-07 10:08:20  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-07 10:08:20  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:11:30  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:12:34  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:14:17  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:15:23  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:15:44  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:15:47  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:16:09  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:17:16  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:18:38  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:23:42  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:41:51  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 10:41:52  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:43:20  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:43:20  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 10:43:20  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:43:21  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-07 10:43:25  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-07 10:43:26  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:43:26  CRITICAL  FLOW3                Uncaught exception #1264589155 in line 482 of /var/www/kunden/thesis/Data/Temporary/Development/Cache/Code/FLOW3_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser_Original.php: Object "TYPO3\Fluid\ViewHelpers\TextfieldViewHelper" is not registered. - See also: 201206071043190c0828.txt
+12-06-07 10:46:30  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 10:48:12  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 10:48:13  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/search".
+12-06-07 10:48:32  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:48:32  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 10:48:32  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 10:48:32  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-07 10:48:36  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-07 10:48:37  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/search".
+12-06-07 11:12:10  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 11:12:11  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-07 11:24:48  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-07 11:24:48  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 11:24:48  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 11:24:49  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-07 11:25:01  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 11:25:02  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-07 11:25:03  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-07 11:25:03  CRITICAL  FLOW3                Uncaught exception #1298012500 in line 149 of /var/www/kunden/thesis/Data/Temporary/Development/Cache/Code/FLOW3_Object_Classes/TYPO3_FLOW3_Mvc_Controller_ActionController_Original.php: Required argument "phrase" is not set. - See also: 201206071124440dd19f.txt
+12-06-07 11:25:42  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-07 11:25:46  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-07 11:25:46  CRITICAL  FLOW3                Uncaught exception #1297759968 in line 281 of /var/www/kunden/thesis/Data/Temporary/Development/Cache/Code/FLOW3_Object_Classes/TYPO3_FLOW3_Mvc_Controller_Argument_Original.php: Exception while property mapping for target type "mixed", at property path "": Could not find a suitable type converter for "mixed" because no such class or interface exists. - See also: 201206071125231a155f.txt
+    previousException => Uncaught exception #1297948764 in line 212 of /var/www/kunden/thesis/Data/Temporary/Development/Cache/Code/FLOW3_Object_Classes/TYPO3_FLOW3_Property_PropertyMapper_Original.php: Could not find a suitable type converter for "mixed" because no such class or interface exists.
+
+12-06-07 11:29:53  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-07 11:29:53  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 11:29:53  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 11:29:53  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-07 11:30:32  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-07 11:30:32  DEBUG     FLOW3                Reflecting class DateTime
+12-06-07 11:30:32  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-07 11:30:33  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Package
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Crawler
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class SplObjectStorage
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class Countable
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class Iterator
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class Traversable
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class Serializable
+12-06-07 11:30:34  DEBUG     FLOW3                Reflecting class ArrayAccess
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\ChoiceFormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\FormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\FileFormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\FormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\InputFormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Field\TextareaFormField
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Form
+12-06-07 11:30:35  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Link
+12-06-07 11:30:36  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\FormFieldRegistry
+12-06-07 11:30:36  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Link
+12-06-07 11:30:36  DEBUG     FLOW3                Reflecting class Symfony\Component\DomCrawler\Package
+12-06-07 11:30:36  INFO      FLOW3                Reflected 13 emerged classes.
+12-06-07 11:31:00  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 12 changed files and 2 changed directories.
+12-06-07 11:31:00  INFO      FLOW3                The configuration has changed, triggering an AOP proxy class rebuild.
+12-06-07 11:31:00  INFO      FLOW3                File Monitor "FLOW3_ConfigurationFiles" detected 6 changed files and 2 changed directories.
+12-06-07 11:31:02  INFO      FLOW3                Aspects have been modified, therefore rebuilding all target classes.
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Dispatcher".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\FlashMessageContainer".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\ObjectPathMapping".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\Router".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\UriBuilder".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Doctrine\PersistenceManager".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Doctrine\Query".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Generic\PersistenceManager".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Generic\Query".
+12-06-07 11:31:03  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\Publishing\FileSystemPublishingTarget".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\Resource".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\ResourcePointer".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Account".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\AuthenticationProviderManager".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\FileBasedSimpleKeyProvider".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\PersistedUsernamePasswordProvider".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\TestingProvider".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\Typo3OrgSsoProvider".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authorization\AccessDecisionVoterManager".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authorization\Resource\SecurityPublishingConfiguration".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Context".
+12-06-07 11:31:04  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Policy\Role".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Session\PhpSession".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Session\TransientSession".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Fluid\Core\Widget\AjaxWidgetContextHolder".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\AbstractParty".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\ElectronicAddress".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\Person".
+12-06-07 11:31:05  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\PersonName".
+12-06-07 11:31:29  DEBUG     FLOW3                Found 19 classes whose reflection data was not cached previously.
+12-06-07 11:31:30  DEBUG     FLOW3                Compiling Doctrine proxies
+12-06-07 11:32:04  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-10 23:57:40  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-10 23:59:53  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-10 23:59:54  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-11 00:02:26  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:02:26  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-11 00:02:26  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:02:27  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-11 00:02:38  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-11 00:02:38  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-11 00:02:39  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-11 00:27:14  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-11 00:27:14  INFO      FLOW3                The configuration has changed, triggering an AOP proxy class rebuild.
+12-06-11 00:27:14  INFO      FLOW3                File Monitor "FLOW3_ConfigurationFiles" detected 1 changed files and 0 changed directories.
+12-06-11 00:27:15  INFO      FLOW3                Aspects have been modified, therefore rebuilding all target classes.
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Dispatcher".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\FlashMessageContainer".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\ObjectPathMapping".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\Router".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Mvc\Routing\UriBuilder".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Doctrine\PersistenceManager".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Doctrine\Query".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Generic\PersistenceManager".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Persistence\Generic\Query".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\Publishing\FileSystemPublishingTarget".
+12-06-11 00:27:15  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\Resource".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Resource\ResourcePointer".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Account".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\AuthenticationProviderManager".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\FileBasedSimpleKeyProvider".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\PersistedUsernamePasswordProvider".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\TestingProvider".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authentication\Provider\Typo3OrgSsoProvider".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authorization\AccessDecisionVoterManager".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Authorization\Resource\SecurityPublishingConfiguration".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Context".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Security\Policy\Role".
+12-06-11 00:27:16  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Session\PhpSession".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\FLOW3\Session\TransientSession".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Fluid\Core\Widget\AjaxWidgetContextHolder".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\AbstractParty".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\ElectronicAddress".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\Person".
+12-06-11 00:27:17  DEBUG     FLOW3                Built AOP proxy for class "TYPO3\Party\Domain\Model\PersonName".
+12-06-11 00:27:44  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-11 00:28:14  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:28:14  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-11 00:28:14  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:28:14  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-11 00:28:24  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-11 00:28:25  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "MKnoll.Thesis/Standard/autocomplete".
+12-06-11 00:29:15  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:31:17  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 00:36:21  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:37:13  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 00:50:20  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-11 00:50:21  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:52:05  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:52:06  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-11 00:52:06  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-11 00:52:06  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-11 00:52:12  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-11 00:52:13  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:53:09  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 00:53:55  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:55:51  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 00:58:01  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 00:58:21  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 00:58:50  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 01:05:35  INFO      FLOW3                File Monitor "FLOW3_ClassFiles" detected 1 changed files and 0 changed directories.
+12-06-11 01:05:36  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with package" matched the path "MKnoll.Thesis/".
+12-06-11 01:05:52  DEBUG     FLOW3                Forget class MKnoll\Thesis\Controller\StandardController
+12-06-11 01:05:52  DEBUG     FLOW3                Reflected class names did not match class names to reflect
+12-06-11 01:05:52  DEBUG     FLOW3                Reflecting class MKnoll\Thesis\Controller\StandardController
+12-06-11 01:05:52  INFO      FLOW3                Reflected 1 emerged classes.
+12-06-11 01:05:56  DEBUG     FLOW3                Found 1 classes whose reflection data was not cached previously.
+12-06-11 01:05:57  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/autocomplete".
+12-06-11 01:06:16  DEBUG     FLOW3                Router route(): Route "FLOW3 :: default with action and format" matched the path "mknoll.thesis/standard/search".

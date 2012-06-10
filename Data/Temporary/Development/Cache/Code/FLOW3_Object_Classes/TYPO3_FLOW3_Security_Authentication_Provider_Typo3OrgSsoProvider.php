@@ -45,9 +45,6 @@ class Typo3OrgSsoProvider extends Typo3OrgSsoProvider_Original implements \TYPO3
 				'TYPO3\FLOW3\Aop\Advice\AfterReturningAdvice' => array(
 					new \TYPO3\FLOW3\Aop\Advice\AfterReturningAdvice('TYPO3\FLOW3\Security\Aspect\LoggingAspect', 'logPersistedUsernamePasswordProviderAuthenticate', $objectManager, NULL),
 				),
-				'TYPO3\FLOW3\Aop\Advice\BeforeAdvice' => array(
-					new \TYPO3\FLOW3\Aop\Advice\BeforeAdvice('TYPO3\FLOW3\Session\Aspect\LazyLoadingAspect', 'initializeSession', $objectManager, NULL),
-				),
 			),
 		);
 	}
@@ -149,13 +146,7 @@ class Typo3OrgSsoProvider extends Typo3OrgSsoProvider_Original implements \TYPO3
 
 				$methodArguments['authenticationToken'] = $authenticationToken;
 			
-					$advices = $this->FLOW3_Aop_Proxy_targetMethodsAndGroupedAdvices['authenticate']['TYPO3\FLOW3\Aop\Advice\BeforeAdvice'];
 					$joinPoint = new \TYPO3\FLOW3\Aop\JoinPoint($this, 'TYPO3\FLOW3\Security\Authentication\Provider\Typo3OrgSsoProvider', 'authenticate', $methodArguments);
-					foreach ($advices as $advice) {
-						$advice->invoke($joinPoint);
-					}
-
-					$joinPoint = new \TYPO3\FLOW3\Aop\JoinPoint($this, 'TYPO3\FLOW3\Security\Authentication\Provider\Typo3OrgSsoProvider', 'authenticate', $joinPoint->getMethodArguments());
 					$result = $this->FLOW3_Aop_Proxy_invokeJoinPoint($joinPoint);
 
 					$advices = $this->FLOW3_Aop_Proxy_targetMethodsAndGroupedAdvices['authenticate']['TYPO3\FLOW3\Aop\Advice\AfterReturningAdvice'];

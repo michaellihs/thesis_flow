@@ -21,9 +21,53 @@ class StandardController_Original extends \TYPO3\FLOW3\Mvc\Controller\ActionCont
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('foos', array(
-			'bar', 'baz'
-		));
+
+	}
+
+
+
+	/**
+	 * Search action
+	 *
+	 * @param string $phrase Searchphrase passed by form
+	 * @param string $docId Document Id
+	 * @return void
+	 */
+	public function searchAction($phrase = "", $docId = NULL) {
+		$this->view->assign('phrase', $phrase);
+		$this->view->assign('docId', $docId);
+	}
+
+
+
+	/**
+	 * Autocomplete action for ajax calls
+	 *
+	 * @param string $phrase
+	 */
+	public function autoCompleteAction($phrase="") {
+		$suggestions = array(
+			'results' => array(
+				array(
+					'title' => 'here comes our title',
+					'docId' => '12345'
+				),
+				array(
+					'title' => 'here comes another title',
+					'docId' => '12'
+				),
+				array(
+					'title' => '3rd title',
+					'docId' => '122'
+				),
+				array(
+					'title' => '4th title',
+					'docId' => '123'
+				),
+			)
+		);
+		echo json_encode($suggestions);
+		exit();
 	}
 
 }

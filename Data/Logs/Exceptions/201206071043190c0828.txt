@@ -1,0 +1,44 @@
+Uncaught exception #1264589155 in line 482 of /var/www/kunden/thesis/Data/Temporary/Development/Cache/Code/FLOW3_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser_Original.php: Object "TYPO3\Fluid\ViewHelpers\TextfieldViewHelper" is not registered.
+
+22 TYPO3\FLOW3\Object\ObjectManager::get((TYPO3\Fluid\ViewHelpers\TextfieldViewHelper)TYPO3\Fluid\ViewHelpers\TextfieldViewHelper)
+21 TYPO3\Fluid\Core\Parser\TemplateParser_Original::initializeViewHelperAndAddItToStack(TYPO3\Fluid\Core\Parser\ParsingState, (f)f, (textfield)textfield, array)
+20 TYPO3\Fluid\Core\Parser\TemplateParser_Original::openingViewHelperTagHandler(TYPO3\Fluid\Core\Parser\ParsingState, (f)f, (textfield)textfield, ( class="input-xxlarge btn-large search-query" name="phrase" ) class=&quot;input-xxlarge btn-large search-query&quot; name=&quot;phrase&quot; , boolean)
+19 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array)
+18 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse((<f:layout name="Default"/>
+
+<f:section name="Title">Hierarchical Recommender</f:section>
+
+<f:section name="Content">
+
+    <header class="jumbotron masthead">
+        <div class="inner">
+            <h1>Hierarchical Recommender</h1>
+
+            <p>Hierarchische Dokumentensuche</p>
+
+            <f:form action="search" method="post" style="text-align: center" class="well form-search">
+                <f:textfield class="input-xxlarge btn-large search-query" name="phrase" />
+                <button type="submit" class="btn btn-primary btn-large">Suchen</button>
+            </f:form>
+
+        </div>
+    </header>
+
+</f:section>)&lt;f:layout name=&quot;Default&quot;/&gt;⏎⏎&lt;f:section name=&quot;Title…:form&gt;⏎⏎        &lt;/div&gt;⏎    &lt;/header&gt;⏎⏎&lt;/f:section&gt;)
+17 TYPO3\Fluid\View\AbstractTemplateView::render()
+16 TYPO3\FLOW3\Mvc\Controller\ActionController_Original::callActionMethod()
+15 TYPO3\FLOW3\Mvc\Controller\ActionController_Original::processRequest(TYPO3\FLOW3\Mvc\ActionRequest, TYPO3\FLOW3\Http\Response)
+14 TYPO3\FLOW3\Mvc\Dispatcher_Original::dispatch(TYPO3\FLOW3\Mvc\ActionRequest, TYPO3\FLOW3\Http\Response)
+13 TYPO3\FLOW3\Mvc\Dispatcher::dispatch(TYPO3\FLOW3\Mvc\ActionRequest, TYPO3\FLOW3\Http\Response)
+12 call_user_func_array(array, array)
+11 TYPO3\FLOW3\Mvc\Dispatcher::FLOW3_Aop_Proxy_invokeJoinPoint(TYPO3\FLOW3\Aop\JoinPoint)
+10 TYPO3\FLOW3\Aop\Advice\AdviceChain::proceed(TYPO3\FLOW3\Aop\JoinPoint)
+9 TYPO3\FLOW3\Security\Aspect\RequestDispatchingAspect_Original::setAccessDeniedResponseHeader(TYPO3\FLOW3\Aop\JoinPoint)
+8 TYPO3\FLOW3\Aop\Advice\AroundAdvice::invoke(TYPO3\FLOW3\Aop\JoinPoint)
+7 TYPO3\FLOW3\Aop\Advice\AdviceChain::proceed(TYPO3\FLOW3\Aop\JoinPoint)
+6 TYPO3\FLOW3\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\FLOW3\Aop\JoinPoint)
+5 TYPO3\FLOW3\Aop\Advice\AroundAdvice::invoke(TYPO3\FLOW3\Aop\JoinPoint)
+4 TYPO3\FLOW3\Aop\Advice\AdviceChain::proceed(TYPO3\FLOW3\Aop\JoinPoint)
+3 TYPO3\FLOW3\Mvc\Dispatcher::dispatch(TYPO3\FLOW3\Mvc\ActionRequest, TYPO3\FLOW3\Http\Response)
+2 TYPO3\FLOW3\Http\RequestHandler::handleRequest()
+1 TYPO3\FLOW3\Core\Bootstrap::run()

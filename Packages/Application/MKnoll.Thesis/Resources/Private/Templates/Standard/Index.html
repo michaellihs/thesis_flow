@@ -1,15 +1,118 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
-<f:section name="Title">Index view of Standard controller</f:section>
+<f:section name="Title">Hierarchical Recommender</f:section>
 
 <f:section name="Content">
-	<h1>A freshly created Fluid template!</h1>
-	<p>Some data set by the controller:</p>
-	<ul>
-		
-		<f:for each="{foos}" as="foo">
-			<li>{foo}</li>
-		</f:for>
-		
-	</ul>
+
+    <header class="jumbotron masthead">
+        <div class="inner">
+            <h1>Hierarchical Recommender</h1>
+
+            <p>Hierarchische Dokumentensuche</p>
+
+            <f:form action="search" method="post" style="text-align: center" class="well form-search">
+                <f:form.textfield id="searchPhraseAutoComplete" class="input-xxlarge btn-large search-query" name="phrase" />
+                <f:form.hidden id="docId" name="docId" />
+                <button type="submit" class="btn btn-primary btn-large">Suchen</button>
+            </f:form>
+
+        </div>
+    </header>
+
+
+    <script type="text/javascript">
+        $(function() {
+
+            $( "#searchPhraseAutoComplete" ).autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url: "http://thesis.centos.localhost/mknoll.thesis/standard/autocomplete",
+                        dataType: "json",
+                        data: {
+                            phrase: request.term
+                        },
+                        success: function( data ) {
+                            response( $.map( data.results, function( item ) {
+                                $( "#docId" ).val( item.docId );
+                                return {
+                                    label: item.title + "(" + item.docId + ")",
+                                    value: item.title
+                                }
+                            }));
+                        }
+                    });
+                },
+                minLength: 2,
+                open: function() {
+                    $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+                },
+                close: function() {
+                    $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+                }
+            });
+        });
+        /*
+        var tx_solr_suggestUrl = 'mknoll.thesis/standard/autocomplete';
+        jQuery(document).ready(function(){
+
+            jQuery('#searchPhraseAutoComplete').autocomplete({
+                //appendTo: '#solrAutoComplete',
+                delay: 500,
+                minLength: 2,
+                position: {
+                    collision: "none",
+                    offset: '0 0'
+                },
+                source: function(request, response) {
+                    jQuery.ajax({
+                        url: tx_solr_suggestUrl,
+                        dataType: 'json',
+                        data: {
+                            termLowercase: request.term.toLowerCase(),
+                            termOriginal: request.term
+                        },
+                        success: function(data) {
+                            var rs     = [],
+                                output = [];
+
+                            jQuery.each(data, function(term, termIndex) {
+                                output.push({
+                                    label : term,
+                                    value : request.term,
+                                    count: data[term]
+                                });
+                            });
+
+                            response(output);
+                        }
+                    })
+                },
+                select: function(event, ui) {
+                    $( "#solrAutoComplete" ).val( ui.item.label );
+                    jQuery(event.target).closest('form').submit();
+                    return false;
+                },
+                focus: function( event, ui ) {
+                    $( "#solrAutoComplete" ).val( ui.item.label );
+                    return false;
+                }
+            }
+            )
+            .data( "autocomplete" )._renderItem = function( ul, item ) {
+
+                var formattedLabel = item.label.replace(new RegExp('(?![^&;]+;)(?!<[^<>]*)(' +
+                                                            jQuery.ui.autocomplete.escapeRegex(item.value) +
+                                                            ')(?![^<>]*>)(?![^&;]+;)', 'gi'), '<strong>$1</strong>')
+
+                return $( "<li></li>" )
+                    .data( "item.autocomplete", item )
+                    .append(
+                        "<a>" + formattedLabel + ' <span class="result_count">' + item.count + '</span>' + "</a>"
+                        )
+                    .appendTo( ul );
+            };
+        });
+        */
+    </script>
+
 </f:section>

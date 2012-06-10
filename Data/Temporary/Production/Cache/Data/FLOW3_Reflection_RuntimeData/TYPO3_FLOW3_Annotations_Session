@@ -1,0 +1,1 @@
+a:3:{i:7;b:1;i:5;a:1:{i:0;O:45:"Doctrine\Common\Annotations\Annotation\Target":3:{s:5:"value";a:1:{i:0;s:6:"METHOD";}s:7:"targets";i:2;s:7:"literal";s:6:"METHOD";}}i:9;a:1:{s:9:"autoStart";a:2:{i:24;i:3;i:14;a:1:{s:3:"var";a:1:{i:0;s:7:"boolean";}}}}}
