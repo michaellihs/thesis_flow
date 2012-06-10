@@ -1,0 +1,3 @@
+[submodule "neo4jphp"]
+	path = neo4jphp
+	url = /var/www/kunden/thesis/Packages/Application/MKnoll.Thesis/Classes/Library/neo4jphp/.git
