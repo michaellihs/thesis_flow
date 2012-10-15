@@ -1,0 +1,349 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Hierarchical Recommender</f:section>
+
+<f:section name="Header">
+    <script type="text/javascript" charset="utf-8">
+    	$(document).ready(function(){
+    	    $("#tagcloud a").tagcloud();
+        })
+    </script>
+</f:section>
+
+<f:section name="Content">
+
+    <div class="page-header">
+        <h1>Einzelansicht {document.title}
+            <small>Auswertung der Einzelansicht für Tiefe {depth} in {time} Sekunden</small>
+        </h1>
+    </div>
+
+	<!--
+    <div class="alert alert-block">
+      <h4 class="alert-heading">Neo4J Abfrage: </h4>
+        {query}
+    </div>
+	-->
+	
+    <div style="background-color: #F7F7F9; border: 1px solid #E1E1E8;" class="alert alert-info" id="tagcloud">
+        <f:for each="{tagCloud}" as="tag">
+            <f:link.action action="search" arguments="{phrase: tag.tag}" rel="{tag.size}">{tag.tag}({tag.size})</f:link.action>
+        </f:for>
+    </div>
+
+    <br/>
+
+	<div style="background-color: #F7F7F9; border: 1px solid #E1E1E8;" class="alert alert-info" id="charts">
+		<h3>Set Difference</h3>
+		<script type="text/javascript+protovis">
+		{setDifferences}
+
+		var setDifferenceChartWidth = 850,
+			setDifferenceChartHeight = 200,
+			setDifferenceChartX = pv.Scale.linear(setDifferences, function(d) d.x).range(0, setDifferenceChartWidth),
+			setDifferenceChartY = pv.Scale.linear(0, 100).range(0, setDifferenceChartHeight),
+			setDifferenceCharDotX = -1;
+
+		var setDifferenceChart = new pv.Panel()
+		    .width(setDifferenceChartWidth)
+		    .height(setDifferenceChartHeight)
+		    .bottom(30)
+		    .left(30)
+		    .right(10)
+		    .top(10);
+
+		setDifferenceChart.add(pv.Rule)
+		    .data(setDifferenceChartY.ticks())
+		    .visible(function() !(this.index % 2))
+		    .bottom(function(d) Math.round(setDifferenceChartY(d)) - .5)
+		    .strokeStyle("#eee")
+		  	.anchor("left").add(pv.Label)
+		    .text(function(d) d.toFixed(1));
+
+		setDifferenceChart.add(pv.Rule)
+		    .data(setDifferenceChartX.ticks())
+		    .visible(function(d) d > 0)
+		    .left(function(d) Math.round(setDifferenceChartX(d)) - .5)
+		    .strokeStyle("#eee")
+		  	.anchor("bottom").add(pv.Label)
+		    .text(function(d) d.toFixed());
+
+		var setDifferenceChartLine = setDifferenceChart.add(pv.Line)
+		    .data(setDifferences)
+		    .left(function(d) setDifferenceChartX(d.x))
+		    .bottom(function(d) setDifferenceChartY(d.y))
+		    .lineWidth(1);
+
+		var dot = setDifferenceChartLine.add(pv.Dot)
+		    .visible(function() setDifferenceCharDotX >= 0)
+		    .data(function() [setDifferences[setDifferenceCharDotX]])
+		    .fillStyle(function() setDifferenceChartLine.strokeStyle())
+		    .strokeStyle("#000")
+		    .size(20)
+		    .lineWidth(1);
+
+		dot.add(pv.Dot)
+		    .left(10)
+		    .bottom(-20)
+			.anchor("right").add(pv.Label)
+		    .text(function(d) d.y.toFixed(2));
+
+		setDifferenceChart.add(pv.Bar)
+		    .fillStyle("rgba(0,0,0,.001)")
+		    .event("mouseout", function() {
+				setDifferenceCharDotX = -1;
+		        return setDifferenceChart;
+		      })
+		    .event("mousemove", function() {
+		        var mx = setDifferenceChartX.invert(setDifferenceChart.mouse().x);
+				setDifferenceCharDotX = pv.search(setDifferences.map(function(d) d.x), mx);
+				setDifferenceCharDotX = setDifferenceCharDotX < 0 ? (-setDifferenceCharDotX - 2) : setDifferenceCharDotX;
+		        return setDifferenceChart;
+		      });
+
+		setDifferenceChart.render();
+		</script>
+	</div>
+
+	<div style="background-color: #F7F7F9; border: 1px solid #E1E1E8;" class="alert alert-info" id="charts">
+		<h3>Normalized Set Difference</h3>
+		<script type="text/javascript+protovis">
+		{normalizedSetDifferences}
+		var normalizedSetDifferenceChartWidth = 850,
+			normalizedSetDifferenceChartHeight = 200,
+			normalizedSetDifferenceChartX = pv.Scale.linear(normalizedSetDifferences, function(d) d.x).range(0, normalizedSetDifferenceChartWidth),
+			normalizedSetDifferenceChartY = pv.Scale.linear(0, 1).range(0, normalizedSetDifferenceChartHeight),
+			normalizedSetDifferenceChartDotX = -1;
+
+		var normalizedSetDifferenceChart = new pv.Panel()
+			.width(normalizedSetDifferenceChartWidth)
+			.height(normalizedSetDifferenceChartHeight)
+			.bottom(30)
+			.left(30)
+			.right(10)
+			.top(10);
+
+		normalizedSetDifferenceChart.add(pv.Rule)
+			.data(normalizedSetDifferenceChartY.ticks())
+			.visible(function() !(this.index % 2))
+			.bottom(function(d) Math.round(normalizedSetDifferenceChartY(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("left").add(pv.Label)
+			.text(function(d) d.toFixed(1));
+
+		normalizedSetDifferenceChart.add(pv.Rule)
+			.data(normalizedSetDifferenceChartX.ticks())
+			.visible(function(d) d > 0)
+			.left(function(d) Math.round(normalizedSetDifferenceChartX(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("bottom").add(pv.Label)
+			.text(function(d) d.toFixed());
+
+		var normalizedSetDifferenceChartLine = normalizedSetDifferenceChart.add(pv.Line)
+			.data(normalizedSetDifferences)
+			.left(function(d) normalizedSetDifferenceChartX(d.x))
+			.bottom(function(d) normalizedSetDifferenceChartY(d.y))
+			.lineWidth(1);
+
+		var normalizedSetDifferencesDot = normalizedSetDifferenceChartLine.add(pv.Dot)
+			.visible(function() normalizedSetDifferenceChartDotX >= 0)
+			.data(function() [normalizedSetDifferences[normalizedSetDifferenceChartDotX]])
+			.fillStyle(function() normalizedSetDifferenceChartLine.strokeStyle())
+			.strokeStyle("#000")
+			.size(20)
+			.lineWidth(1);
+
+		normalizedSetDifferencesDot.add(pv.Dot)
+			.left(10)
+			.bottom(-20)
+			.anchor("right").add(pv.Label)
+			.text(function(d) d.y.toFixed(2));
+
+		normalizedSetDifferenceChart.add(pv.Bar)
+			.fillStyle("rgba(0,0,0,.001)")
+			.event("mouseout", function() {
+				normalizedSetDifferenceChartDotX = -1;
+				return normalizedSetDifferenceChart;
+			  })
+			.event("mousemove", function() {
+				var mx = normalizedSetDifferenceChartX.invert(normalizedSetDifferenceChart.mouse().x);
+				normalizedSetDifferenceChartDotX = pv.search(normalizedSetDifferences.map(function(d) d.x), mx);
+				normalizedSetDifferenceChartDotX = normalizedSetDifferenceChartDotX < 0 ? (-normalizedSetDifferenceChartDotX - 2) : normalizedSetDifferenceChartDotX;
+				return normalizedSetDifferenceChart;
+			  });
+
+		normalizedSetDifferenceChart.render();
+		</script>
+	</div>
+
+	<div style="background-color: #F7F7F9; border: 1px solid #E1E1E8;" class="alert alert-info" id="charts">
+		<h3>Normalized Set Top N Difference</h3>
+		<script type="text/javascript+protovis">
+		{normalizedTopNSetDifferences}
+		var normalizedTopNSetDifferenceChartWidth = 850,
+			normalizedTopNSetDifferenceChartHeight = 200,
+			normalizedTopNSetDifferenceChartX = pv.Scale.linear(normalizedTopNSetDifferences, function(d) d.x).range(0, normalizedTopNSetDifferenceChartWidth),
+			normalizedTopNSetDifferenceChartY = pv.Scale.linear(0, 1).range(0, normalizedTopNSetDifferenceChartHeight),
+			normalizedTopNSetDifferenceChartDotX = -1;
+
+		var normalizedTopNSetDifferenceChart = new pv.Panel()
+			.width(normalizedTopNSetDifferenceChartWidth)
+			.height(normalizedTopNSetDifferenceChartHeight)
+			.bottom(30)
+			.left(30)
+			.right(10)
+			.top(10);
+
+		normalizedTopNSetDifferenceChart.add(pv.Rule)
+			.data(normalizedTopNSetDifferenceChartY.ticks())
+			.visible(function() !(this.index % 2))
+			.bottom(function(d) Math.round(normalizedTopNSetDifferenceChartY(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("left").add(pv.Label)
+			.text(function(d) d.toFixed(1));
+
+		normalizedTopNSetDifferenceChart.add(pv.Rule)
+			.data(normalizedTopNSetDifferenceChartX.ticks())
+			.visible(function(d) d > 0)
+			.left(function(d) Math.round(normalizedTopNSetDifferenceChartX(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("bottom").add(pv.Label)
+			.text(function(d) d.toFixed());
+
+		var normalizedTopNSetDifferenceChartLine = normalizedTopNSetDifferenceChart.add(pv.Line)
+			.data(normalizedTopNSetDifferences)
+			.left(function(d) normalizedTopNSetDifferenceChartX(d.x))
+			.bottom(function(d) normalizedTopNSetDifferenceChartY(d.y))
+			.lineWidth(1);
+
+		var normalizedTopNSetDifferencesDot = normalizedTopNSetDifferenceChartLine.add(pv.Dot)
+			.visible(function() normalizedTopNSetDifferenceChartDotX >= 0)
+			.data(function() [normalizedTopNSetDifferences[normalizedTopNSetDifferenceChartDotX]])
+			.fillStyle(function() normalizedTopNSetDifferenceChartLine.strokeStyle())
+			.strokeStyle("#000")
+			.size(20)
+			.lineWidth(1);
+
+		normalizedTopNSetDifferencesDot.add(pv.Dot)
+			.left(10)
+			.bottom(-20)
+			.anchor("right").add(pv.Label)
+			.text(function(d) d.y.toFixed(2));
+
+		normalizedTopNSetDifferenceChart.add(pv.Bar)
+			.fillStyle("rgba(0,0,0,.001)")
+			.event("mouseout", function() {
+				normalizedTopNSetDifferenceChartDotX = -1;
+				return normalizedTopNSetDifferenceChart;
+			  })
+			.event("mousemove", function() {
+				var mx = normalizedTopNSetDifferenceChartX.invert(normalizedTopNSetDifferenceChart.mouse().x);
+				normalizedTopNSetDifferenceChartDotX = pv.search(normalizedTopNSetDifferences.map(function(d) d.x), mx);
+				normalizedTopNSetDifferenceChartDotX = normalizedTopNSetDifferenceChartDotX < 0 ? (-normalizedTopNSetDifferenceChartDotX - 2) : normalizedTopNSetDifferenceChartDotX;
+				return normalizedTopNSetDifferenceChart;
+			  });
+
+		normalizedTopNSetDifferenceChart.render();
+		</script>
+	</div>
+
+	<div style="background-color: #F7F7F9; border: 1px solid #E1E1E8;" class="alert alert-info" id="charts">
+		<h3>Cosine similarities</h3>
+		<script type="text/javascript+protovis">
+		{cosineSimilarities}
+		var cosineSimilarityChartWidth = 850,
+			cosineSimilarityChartHeight = 200,
+			cosineSimilarityChartX = pv.Scale.linear(cosineSimilarities, function(d) d.x).range(0, cosineSimilarityChartWidth),
+			cosineSimilarityChartY = pv.Scale.linear(0, 1).range(0, cosineSimilarityChartHeight),
+			cosineSimilarityChartDotX = -1;
+
+		var cosineSimilarityChart = new pv.Panel()
+			.width(cosineSimilarityChartWidth)
+			.height(cosineSimilarityChartHeight)
+			.bottom(30)
+			.left(30)
+			.right(10)
+			.top(10);
+
+		cosineSimilarityChart.add(pv.Rule)
+			.data(cosineSimilarityChartY.ticks())
+			.visible(function() !(this.index % 2))
+			.bottom(function(d) Math.round(cosineSimilarityChartY(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("left").add(pv.Label)
+			.text(function(d) d.toFixed(1));
+
+		cosineSimilarityChart.add(pv.Rule)
+			.data(cosineSimilarityChartX.ticks())
+			.visible(function(d) d > 0)
+			.left(function(d) Math.round(cosineSimilarityChartX(d)) - .5)
+			.strokeStyle("#eee")
+			.anchor("bottom").add(pv.Label)
+			.text(function(d) d.toFixed());
+
+		var cosineSimilarityChartLine = cosineSimilarityChart.add(pv.Line)
+			.data(cosineSimilarities)
+			.left(function(d) cosineSimilarityChartX(d.x))
+			.bottom(function(d) cosineSimilarityChartY(d.y))
+			.lineWidth(1);
+
+		var cosineSimilaritiesDot = cosineSimilarityChartLine.add(pv.Dot)
+			.visible(function() cosineSimilarityChartDotX >= 0)
+			.data(function() [cosineSimilarities[cosineSimilarityChartDotX]])
+			.fillStyle(function() cosineSimilarityChartLine.strokeStyle())
+			.strokeStyle("#000")
+			.size(20)
+			.lineWidth(1);
+
+		cosineSimilaritiesDot.add(pv.Dot)
+			.left(10)
+			.bottom(-20)
+			.anchor("right").add(pv.Label)
+			.text(function(d) d.y.toFixed(2));
+
+		cosineSimilarityChart.add(pv.Bar)
+			.fillStyle("rgba(0,0,0,.001)")
+			.event("mouseout", function() {
+				cosineSimilarityChartDotX = -1;
+				return cosineSimilarityChart;
+			  })
+			.event("mousemove", function() {
+				var mx = cosineSimilarityChartX.invert(cosineSimilarityChart.mouse().x);
+				cosineSimilarityChartDotX = pv.search(cosineSimilarities.map(function(d) d.x), mx);
+				cosineSimilarityChartDotX = cosineSimilarityChartDotX < 0 ? (-cosineSimilarityChartDotX - 2) : cosineSimilarityChartDotX;
+				return cosineSimilarityChart;
+			  });
+
+		cosineSimilarityChart.render();
+		</script>
+	</div>
+
+	<br />
+
+    <div class="btn-group">
+       <f:link.action action="single" arguments="{nodeId:nodeId, depth:depth, decrease:1, increase:0}">
+           <button class="btn btn-primary"><i class="icon-minus icon-white"></i> Auswahl einschränken</button>
+       </f:link.action>
+       <f:link.action action="single" arguments="{nodeId:nodeId, depth:depth, decrease:0, increase:1}">
+           <button class="btn btn-primary"><i class="icon-plus icon-white"></i> Auswahl erweitern</button>
+       </f:link.action>
+    </div>
+
+    <br/>
+
+    <table class="table table-striped">
+        <tbody>
+            <f:for each="{docs}" as="document" key="id">
+                <tr>
+                    <td>{document.nodeId}</td>
+                    <td><f:link.action action="single" arguments="{nodeId:document.nodeId}">{document.title}</f:link.action> ({document.docId})<!--<br/><pre>{document.result}</pre>--></td>
+                    <td><f:if condition="{document._from_clustering}"><div class="btn btn-primary">clustering</div></f:if></td>
+                    <td><f:if condition="{document._from_recommendations}"><div class="btn btn-danger">recommendations</div></f:if></td>
+                </tr>
+            </f:for>
+        </tbody>
+    </table>
+
+    <f:link.action action="index">Zurück zur Suche</f:link.action>
+
+</f:section>

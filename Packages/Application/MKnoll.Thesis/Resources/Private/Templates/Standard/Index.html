@@ -26,7 +26,7 @@
             $( "#searchPhraseAutoComplete" ).autocomplete({
                 source: function( request, response ) {
                     $.ajax({
-                        url: "http://thesis.centos.localhost/mknoll.thesis/standard/autocomplete",
+                        url: "http://live.thesis.centos.localhost/mknoll.thesis/standard/autocomplete",
                         dataType: "json",
                         data: {
                             phrase: request.term

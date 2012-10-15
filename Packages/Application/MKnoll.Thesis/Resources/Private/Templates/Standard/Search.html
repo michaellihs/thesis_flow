@@ -1,3 +1,33 @@
-Suchwort: {phrase} <br/>
-Document ID: {docId} <br/>
-Suchergebnis
+<f:layout name="Default" />
+
+<f:section name="Title">Hierarchical Recommender</f:section>
+
+<f:section name="Content">
+
+    <div class="page-header">
+        <h1>Suchergebnisse
+            <f:if condition="{phrase}">
+                <f:then>
+                    <small>Ihre Suche nach <em>"{phrase}"</em> erbrachte {count} Ergebnisse in {time} Sekunden</small>
+                </f:then>
+                <f:else>
+                    <small>Bitte geben Sie ein Suchergebnis an!</small>
+                </f:else>
+            </f:if>
+        </h1>
+    </div>
+
+    <table class="table table-striped">
+        <tbody>
+            <f:for each="{docs}" as="document" key="id">
+                <tr>
+                    <td>{document.nodeId}</td>
+                    <td><f:link.action action="single" arguments="{nodeId:document.nodeId}">{document.title}</f:link.action> ({document.docId})<!--<br/><pre>{document.result}</pre>--></td>
+                </tr>
+            </f:for>
+        </tbody>
+    </table>
+
+    <f:link.action action="index">Zurück zur Suche</f:link.action>
+
+</f:section>
