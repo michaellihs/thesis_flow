@@ -1,1 +1,0 @@
-a:2:{i:5;a:1:{i:0;O:30:"TYPO3\FLOW3\Annotations\Aspect":0:{}}i:8;a:3:{s:21:"isEntityOrValueObject";a:1:{i:12;i:3;}s:28:"needsLazyLoadingObjectAspect";a:1:{i:12;i:3;}s:10:"initialize";a:2:{i:12;i:3;i:13;a:1:{s:9:"joinPoint";a:3:{i:16;i:0;i:20;s:34:"TYPO3\FLOW3\Aop\JoinPointInterface";i:18;s:34:"TYPO3\FLOW3\Aop\JoinPointInterface";}}}}}
